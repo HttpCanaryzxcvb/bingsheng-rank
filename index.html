@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>兵圣帝国正统排行榜</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+            background: #fff;
+            color: #333;
+            min-height: 100vh;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 30px;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 5px;
+            letter-spacing: 2px;
+        }
+        h2 {
+            font-size: 18px;
+            font-weight: bold;
+            color: #c00;
+            margin: 30px 0 15px;
+            letter-spacing: 1px;
+        }
+        h3 {
+            font-size: 16px;
+            font-weight: bold;
+            color: #000;
+            margin: 25px 0 10px;
+        }
+
+        .info-block {
+            margin-bottom: 8px;
+            color: #333;
+        }
+        .info-block .label {
+            font-weight: bold;
+            color: #000;
+        }
+
+        .notice {
+            color: #c00;
+            margin: 15px 0 25px;
+            line-height: 2;
+        }
+
+        .org-list {
+            line-height: 2.2;
+            color: #333;
+        }
+        .org-list .tier-name {
+            font-weight: bold;
+            color: #000;
+            margin-right: 5px;
+        }
+
+        .divider {
+            border: none;
+            border-top: 1px solid #ddd;
+            margin: 25px 0;
+        }
+
+        .nav {
+            text-align: right;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        .nav a {
+            color: #666;
+            text-decoration: none;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+        .nav a:hover { color: #000; }
+
+        .modal-bg {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 200;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-bg.on {
+            display: flex !important;
+        }
+        .modal-box {
+            background: #fff;
+            border: 1px solid #ccc;
+            padding: 40px 50px;
+            text-align: center;
+            min-width: 300px;
+        }
+        .modal-box h3 {
+            margin-bottom: 15px;
+            font-size: 16px;
+            color: #333;
+        }
+        .modal-box .qq {
+            font-size: 28px;
+            font-weight: bold;
+            color: #c00;
+            margin: 15px 0;
+            letter-spacing: 3px;
+        }
+        .modal-box .hint {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .modal-box button {
+            padding: 10px 40px;
+            border: 1px solid #999;
+            background: #fff;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .modal-box button:hover {
+            background: #f5f5f5;
+        }
+
+        .page { display: none; }
+        .page.on { display: block; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="nav">
+        <a href="javascript:void(0)" onclick="go('home')">首页</a>
+        <a href="javascript:void(0)" onclick="go('about')">关于</a>
+        <a href="javascript:void(0)" onclick="showModal()">投稿</a>
+    </div>
+
+    <!-- ===== 首页 ===== -->
+    <div id="home" class="page on">
+        <h1>兵圣帝国正统排行榜</h1>
+
+        <h2>（副标题待填写）</h2>
+
+        <div class="info-block">本榜依据公示统计，接受公众监督。异议请于公示期内反馈。</div>
+
+        <div class="info-block"><span class="label">排榜人：</span>（待填写）</div>
+        <div class="info-block"><span class="label">时间：</span>（待填写）</div>
+
+        <div class="notice">
+            <span class="label">公告：</span>（待填写）
+        </div>
+
+        <h3>组织排行榜：</h3>
+
+        <div class="org-list">
+            <div><span class="tier-name">T1：</span>虚位以待</div>
+            <div><span class="tier-name">T2：</span>虚位以待</div>
+            <div><span class="tier-name">T3：</span>虚位以待</div>
+            <div><span class="tier-name">T4：</span>虚位以待</div>
+        </div>
+    </div>
+
+    <!-- ===== 关于页 ===== -->
+    <div id="about" class="page">
+        <h1>关于兵圣帝国</h1>
+
+        <div class="info-block" style="margin-top:30px;"><span class="label">成立时间：</span>2024年</div>
+        <div class="info-block"><span class="label">性质：</span>正规官方排名榜站</div>
+        <div class="info-block"><span class="label">发源地：</span>左丘明旗下</div>
+
+        <hr class="divider">
+
+        <h3>历史沿革</h3>
+        <div class="org-list">
+            <div><span class="tier-name">前身：</span>神影-SY（联部制度）</div>
+            <div><span class="tier-name">演变：</span>兵社（赧染旗下）</div>
+            <div><span class="tier-name">现制：</span>圣社（合制度）</div>
+        </div>
+
+        <hr class="divider">
+
+        <div style="color:#333; line-height:2; margin-top:30px;">
+            本排名无个人恩怨，无利益冲突，仅为各组织提供一个参考依据。<br>
+            为人民服务，公平公正。
+        </div>
+    </div>
+
+</div>
+
+<div class="modal-bg" id="modal">
+    <div class="modal-box">
+        <h3>官方交流群</h3>
+        <div class="qq">707302999</div>
+        <div class="hint">加入群聊进行投稿</div>
+        <button onclick="hideModal()">关闭</button>
+    </div>
+</div>
+
+<script>
+    function go(id) {
+        document.querySelectorAll('.page').forEach(function(p) {
+            p.classList.remove('on');
+        });
+        document.getElementById(id).classList.add('on');
+        window.scrollTo(0, 0);
+    }
+
+    function showModal() {
+        var modal = document.getElementById('modal');
+        modal.style.display = 'flex';
+        modal.classList.add('on');
+    }
+
+    function hideModal() {
+        var modal = document.getElementById('modal');
+        modal.style.display = 'none';
+        modal.classList.remove('on');
+    }
+
+    document.getElementById('modal').addEventListener('click', function(e) {
+        if (e.target === this) {
+            hideModal();
+        }
+    });
+</script>
+
+</body>
+</html>
